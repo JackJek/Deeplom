@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSATUSummarizer</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/Style.css' %}" type="text/css">
+</head>
+<body>
+
+<div class="container">
+    <div class='title'>
+        <div class='mid'>
+            <header>
+                <div>
+                    <h1><img src="{% static 'css/backgrounds/rsatu.gif' %}" alt="My image">OnlineSummarizer</h1>
+                </div>
+            </header>
+        </div>
+    </div>
+
+
+    <div class='work'>
+        <div class='mid'>
+            <div id='Input' class="block-left">
+                <form enctype="application/x-www-form-urlencoded" name="input" method="post">
+                    {% csrf_token %}
+                    <div class="send">
+                    <textarea class="txt" id='intext' name="intext" value="{{intext}}"
+                              placeholder="Поместите текст здесь и выберите нужную глубину реферирования, или укажите тему и выберите любую глубину.">{{input}}</textarea>
+                    </div>
+
+                    <div class='under'>
+                        <div >
+                                <textarea id='Theme' name="theme" class="txt"></textarea>
+                        </div>
+
+                        <div class='side' id='button'>
+                            <ul class='menu'>
+                                <li class="menu__list"><input type="button" value="Глубина">
+                                    <ul class='menu__drop'>
+                                        <li><input type="submit" value="0" name="id"></li>
+                                        <li><input type="submit" value="1" name="id"></li>
+                                        <li><input type="submit" value="2" name="id"></li>
+                                        <li><input type="submit" value="3" name="id"></li>
+                                        <li><input type="submit" value="4" name="id"></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class = 'mid block-right' id='Output' class = ''>
+                <textarea class="txt " disabled>{{name}}</textarea>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</div>
+<div class="container">
+
+
+</div>
+</body>
+</html>
